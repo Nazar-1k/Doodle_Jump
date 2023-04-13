@@ -14,6 +14,6 @@ int main()
 
 	// Printing a random number
 	// similar to rand()
-	cout << mt._Max << '\n';
+	cout << mt._Base() << '\n';
 	return 0;
 }
