@@ -1,5 +1,4 @@
 // C++ program for demonstrating 
-// similaritites
 #include <ctime>
 #include <iostream>
 #include <random>
@@ -14,6 +13,6 @@ int main()
 
 	// Printing a random number
 	// similar to rand()
-	cout << mt._Base() << '\n';
+	cout << mt.min << '\n';
 	return 0;
 }
