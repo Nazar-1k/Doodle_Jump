@@ -13,6 +13,6 @@ int main()
 
 	// Printing a random number
 	// similar to rand()
-	cout << mt.min << '\n';
+	cout << mt.default_seed << '\n';
 	return 0;
 }
