@@ -13,6 +13,6 @@ int main()
 
 	// Printing a random number
 	// similar to rand()
-	cout << mt.default_seed << '\n';
+	cout << mt.mask_bits << '\n';
 	return 0;
 }
