@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 #include <random>
 
 int main() {
@@ -15,5 +16,16 @@ int main() {
 	
 #pragma endregion 
 
+
+#pragma region mersenne_twister_engine
+	
+	std::mt19937 gen(std::random_device{}());
+
+	std::uniform_int_distribution<int> dist(0, 99);
+
+	std::cout << "mersenne_twister_engine -> " << dist(gen) << std::endl;
+	
+
+#pragma endregion
 	return 0;
 }
