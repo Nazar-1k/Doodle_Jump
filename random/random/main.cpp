@@ -4,41 +4,49 @@
 
 int main() {
 
-std::uniform_int_distribution<int> dist(0, 99);
+	std::uniform_int_distribution<int> dist(0, 99);
+#pragma region 	Random_number_engines
+
 #pragma region linear_congruential_engine
 
-	std::linear_congruential_engine<unsigned int, 48271, 0, 2147483647> generator;
+		std::linear_congruential_engine<unsigned int, 48271, 0, 2147483647> generator1(std::random_device{}());
 
-	generator.seed(std::random_device()());
-	
+		std::cout << "linear_congruential_engine -> " << dist(generator1) << std::endl;
 
-	std::cout << "linear_congruential_engine -> " << dist(generator) << std::endl;
-	
-#pragma endregion 
+	#pragma endregion 
 
 #pragma region mersenne_twister_engine
-	
-	std::mt19937 gen(std::random_device{}());
 
-	
+		std::mt19937 generator2(std::random_device{}());
 
-	std::cout << "mersenne_twister_engine -> " << dist(gen) << std::endl;
-	
+		std::cout << "mersenne_twister_engine -> " << dist(generator2) << std::endl;
+
 
 #pragma endregion
 
 #pragma region subtract_with_carry_engine
 
-	std::subtract_with_carry_engine<unsigned, 24, 10, 24> rng;
+		std::subtract_with_carry_engine<unsigned, 24, 10, 24> generator3(std::random_device{}());
 
-	std::seed_seq seed{ 1, 2, 3, 4, 5 };
-	rng.seed(seed);
 
-	std::cout << "subtract_with_carry_engine -> " << dist(rng) << std::endl;
+		std::cout << "subtract_with_carry_engine -> " << dist(generator3) << std::endl;
 
+
+	#pragma endregion
+	
+#pragma endregion
+
+#pragma region Random_number_engine_adaptors
+		
+#pragma region discard_engine
+
+		std::discard_block_engine<std::mt19937, 4096, 4096> generator4(std::random_device{}());
+		std::cout << "discard_engine -> " << dist(generator4) << std::endl;
+
+	
+#pragma endregion
 
 #pragma endregion
-	
 
 	return 0;
 }
