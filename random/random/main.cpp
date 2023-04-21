@@ -43,8 +43,14 @@ int main() {
 		std::discard_block_engine<std::mt19937, 4096, 4096> generator4(std::random_device{}());
 		std::cout << "discard_engine -> " << dist(generator4) << std::endl;
 
-	
 #pragma endregion
+
+#pragma region independent_bits_engine
+
+		std::independent_bits_engine<std::mt19937, 32, uint32_t> generator5(std::random_device{}());
+		std::cout << "independent_bits_engine -> " << dist(generator5) <<  std::endl;
+
+#pragma endregion	
 
 #pragma endregion
 
