@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <cassert>
 #include <random>
 
@@ -51,6 +52,23 @@ int main() {
 		std::cout << "independent_bits_engine -> " << dist(generator5) <<  std::endl;
 
 #pragma endregion	
+		
+#pragma region shuffle_order_engine
+
+    std::mt19937 gen(std::random_device{}());
+
+    std::vector<int> nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    std::shuffle_order_engine<std::mt19937, 10> engine(gen);
+
+    std::cout << "Random sequence: ";
+    for (int i = 0; i < 10; i++) {
+        std::cout << dist(engine) << " ";
+    }
+    std::cout << std::endl;
+
+
+#pragma endregion	
+		
 
 #pragma endregion
 
