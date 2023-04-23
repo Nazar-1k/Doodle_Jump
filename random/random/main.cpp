@@ -39,38 +39,45 @@ int main() {
 
 #pragma region Random_number_engine_adaptors
 		
-#pragma region discard_engine
+	#pragma region discard_engine
 
-		std::discard_block_engine<std::mt19937, 4096, 4096> generator4(std::random_device{}());
-		std::cout << "discard_engine -> " << dist(generator4) << std::endl;
+			std::discard_block_engine<std::mt19937, 4096, 4096> generator4(std::random_device{}());
+			std::cout << "discard_engine -> " << dist(generator4) << std::endl;
+
+	#pragma endregion
+
+	#pragma region independent_bits_engine
+
+			std::independent_bits_engine<std::mt19937, 32, uint32_t> generator5(std::random_device{}());
+			std::cout << "independent_bits_engine -> " << dist(generator5) <<  std::endl;
+
+	#pragma endregion	
+		
+	#pragma region shuffle_order_engine
+
+		std::mt19937 gen(std::random_device{}());
+
+		std::vector<int> nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		std::shuffle_order_engine<std::mt19937, 10> engine(gen);
+
+		std::cout << "Random sequence: ";
+		for (int i = 0; i < 10; i++) {
+			std::cout << dist(engine) << " ";
+		}
+		std::cout << std::endl;
+
+
+	#pragma endregion	
+
+#pragma endregion
+		
+#pragma region Predefined_random_number_generators
+	std::minstd_rand0 generator6(std::random_device{}());
+	
+	std::cout << "minstd_rand0 ->  " << dist(generator6) << std::endl; 
 
 #pragma endregion
 
-#pragma region independent_bits_engine
-
-		std::independent_bits_engine<std::mt19937, 32, uint32_t> generator5(std::random_device{}());
-		std::cout << "independent_bits_engine -> " << dist(generator5) <<  std::endl;
-
-#pragma endregion	
-		
-#pragma region shuffle_order_engine
-
-    std::mt19937 gen(std::random_device{}());
-
-    std::vector<int> nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    std::shuffle_order_engine<std::mt19937, 10> engine(gen);
-
-    std::cout << "Random sequence: ";
-    for (int i = 0; i < 10; i++) {
-        std::cout << dist(engine) << " ";
-    }
-    std::cout << std::endl;
-
-
-#pragma endregion	
-		
-
-#pragma endregion
 
 	return 0;
 }
