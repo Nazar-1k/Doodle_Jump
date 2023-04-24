@@ -70,14 +70,23 @@ int main() {
 	#pragma endregion	
 
 #pragma endregion
-		
-#pragma region Predefined_random_number_generators
-	std::minstd_rand0 generator6(std::random_device{}());
 	
-	std::cout << "minstd_rand0 ->  " << dist(generator6) << std::endl; 
+
+#pragma region Predefined_random_number_generators
+
+	#pragma region minstd_rand0
+
+		std::minstd_rand0 generator6(std::random_device{}());
+		std::cout << "minstd_rand0 ->  " << dist(generator6) << std::endl; 
+
+	#pragma endregion
+	#pragma region minstd_rand
+
+		std::minstd_rand generator7(std::random_device{}());  
+		std::cout << "minstd_rand -> " << dist(generator7) << std::endl;
+
+	#pragma endregion
 
 #pragma endregion
-
-
 	return 0;
 }
