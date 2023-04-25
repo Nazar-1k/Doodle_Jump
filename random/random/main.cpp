@@ -86,7 +86,12 @@ int main() {
 		std::cout << "minstd_rand -> " << dist(generator7) << std::endl;
 
 	#pragma endregion
+	#pragma region mt19937
 
+		std::mt19937 generator8(std::random_device{}());
+		std::cout << "mt19937 -> " << dist(generator8) << std::endl;
+
+	#pragma endregion
 #pragma endregion
 	return 0;
 }
