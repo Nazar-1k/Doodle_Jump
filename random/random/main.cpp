@@ -92,6 +92,13 @@ int main() {
 		std::cout << "mt19937 -> " << dist(generator8) << std::endl;
 
 	#pragma endregion
+	#pragma region mt19937_64
+
+		std::mt19937_64 generator9(std::random_device{}());
+		std::cout << "mt19937_64 -> " << dist(generator9) << std::endl;
+	
+	#pragma endregion
+
 #pragma endregion
 	return 0;
 }
