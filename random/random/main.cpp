@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cassert>
 #include <random>
+#include <array>
 
 int main() {
 
@@ -98,7 +99,16 @@ int main() {
 		std::cout << "mt19937_64 -> " << dist(generator9) << std::endl;
 	
 	#pragma endregion
+#pragma region ranlux24_base
+
+
+		std::ranlux24_base generator10(std::random_device{}());
+		std::cout << "ranlux24_base -> " << dist(generator10) << std::endl;
+
+#pragma endregion
+
 
 #pragma endregion
 	return 0;
 }
+
