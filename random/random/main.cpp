@@ -116,6 +116,15 @@ int main() {
 #pragma endregion
 		
 
+#pragma region ranlux24
+
+
+		std::ranlux24 generator12(std::random_device{}());
+		std::cout << "ranlux24 -> " << dist(generator12) << std::endl;
+
+#pragma endregion
+		
+
 
 #pragma endregion
 	return 0;
