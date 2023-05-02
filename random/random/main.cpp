@@ -99,32 +99,36 @@ int main() {
 		std::cout << "mt19937_64 -> " << dist(generator9) << std::endl;
 	
 	#pragma endregion
-#pragma region ranlux24_base
+	#pragma region ranlux24_base
 
 
-		std::ranlux24_base generator10(std::random_device{}());
-		std::cout << "ranlux24_base -> " << dist(generator10) << std::endl;
+			std::ranlux24_base generator10(std::random_device{}());
+			std::cout << "ranlux24_base -> " << dist(generator10) << std::endl;
 
-#pragma endregion
+	#pragma endregion
+	#pragma region ranlux48_base
 
-#pragma region ranlux48_base
 
+			std::ranlux48_base generator11(std::random_device{}());
+			std::cout << "ranlux48_base -> " << dist(generator11) << std::endl;
 
-		std::ranlux48_base generator11(std::random_device{}());
-		std::cout << "ranlux48_base -> " << dist(generator11) << std::endl;
-
-#pragma endregion
-		
-
+	#pragma endregion	
 #pragma region ranlux24
 
 
-		std::ranlux24 generator12(std::random_device{}());
-		std::cout << "ranlux24 -> " << dist(generator12) << std::endl;
+			std::ranlux24 generator12(std::random_device{}());
+			std::cout << "ranlux24 -> " << dist(generator12) << std::endl;
 
 #pragma endregion
 		
+#pragma region ranlux48
 
+
+			std::ranlux48 generator13(std::random_device{}());
+			std::cout << "ranlux48 -> " << dist(generator13) << std::endl;
+
+#pragma endregion
+		
 
 #pragma endregion
 	return 0;
