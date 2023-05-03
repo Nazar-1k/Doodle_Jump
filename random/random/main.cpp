@@ -129,6 +129,16 @@ int main() {
 
 #pragma endregion
 		
+#pragma region knuth_b
+
+
+			std::knuth_b generator14(std::random_device{}());
+			std::cout << "knuth_b -> " << dist(generator14) << std::endl;
+
+#pragma endregion
+			
+
+
 
 #pragma endregion
 	return 0;
