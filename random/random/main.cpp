@@ -137,7 +137,12 @@ int main() {
 
 #pragma endregion
 			
+#pragma region default_random_engine
+            std::default_random_engine generator15(std::random_device{}());
+			std::cout << "default_random_engine -> " << dist(generator15) << std::endl;
+#pragma endregion 
 
+			
 
 
 #pragma endregion
