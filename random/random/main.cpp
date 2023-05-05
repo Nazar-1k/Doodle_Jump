@@ -5,8 +5,7 @@
 #include <array>
 
 int main() {
-
-	std::uniform_int_distribution<int> dist(0, 99);
+std::uniform_int_distribution<int> dist(0, 99);
 #pragma region 	Random_number_engines
 
 #pragma region linear_congruential_engine
@@ -37,7 +36,6 @@ int main() {
 	#pragma endregion
 	
 #pragma endregion
-
 #pragma region Random_number_engine_adaptors
 		
 	#pragma region discard_engine
@@ -71,8 +69,6 @@ int main() {
 	#pragma endregion	
 
 #pragma endregion
-	
-
 #pragma region Predefined_random_number_generators
 
 	#pragma region minstd_rand0
@@ -113,37 +109,39 @@ int main() {
 			std::cout << "ranlux48_base -> " << dist(generator11) << std::endl;
 
 	#pragma endregion	
-#pragma region ranlux24
+	#pragma region ranlux24
 
 
 			std::ranlux24 generator12(std::random_device{}());
 			std::cout << "ranlux24 -> " << dist(generator12) << std::endl;
 
+	#pragma endregion
+	#pragma region ranlux48
+
+		std::ranlux48 generator13(std::random_device{}());
+		std::cout << "ranlux48 -> " << dist(generator13) << std::endl;
+
+	#pragma endregion
+	#pragma region knuth_b
+
+
+		std::knuth_b generator14(std::random_device{}());
+		std::cout << "knuth_b -> " << dist(generator14) << std::endl;
+
+	#pragma endregion	
+	#pragma region default_random_engine
+
+		std::default_random_engine generator15(std::random_device{}());
+		std::cout << "default_random_engine -> " << dist(generator15) << std::endl;
+
+	#pragma endregion 
+
 #pragma endregion
-		
-#pragma region ranlux48
+#pragma region Non-deterministic_random_numbers
 
-
-			std::ranlux48 generator13(std::random_device{}());
-			std::cout << "ranlux48 -> " << dist(generator13) << std::endl;
-
-#pragma endregion
-		
-#pragma region knuth_b
-
-
-			std::knuth_b generator14(std::random_device{}());
-			std::cout << "knuth_b -> " << dist(generator14) << std::endl;
-
-#pragma endregion
-			
-#pragma region default_random_engine
-            std::default_random_engine generator15(std::random_device{}());
-			std::cout << "default_random_engine -> " << dist(generator15) << std::endl;
-#pragma endregion 
-
-			
-
+	#pragma region random_device
+			std::cout << "Example random_device -> " << dist(generator12) << std::endl;
+	#pragma endregion random_device
 
 #pragma endregion
 	return 0;
