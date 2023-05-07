@@ -5,7 +5,18 @@
 #include <array>
 
 int main() {
-std::uniform_int_distribution<int> dist(0, 99);
+
+
+#pragma region Random_number_distributions
+
+	#pragma region uniform_int_distribution
+	// is a C++ standard library class template that provides a way to generate uniformly distributed random integers within a given range. It is defined in the <random> header and is part of the C++11 standard.
+		std::uniform_int_distribution<int> dist(0, 99);
+
+	#pragma endregion
+#pragma endregion
+
+
 #pragma region 	Random_number_engines
 
 #pragma region linear_congruential_engine
@@ -144,6 +155,8 @@ std::uniform_int_distribution<int> dist(0, 99);
 	#pragma endregion random_device
 
 #pragma endregion
+
+
 	return 0;
 }
 
