@@ -9,11 +9,29 @@ int main() {
 
 #pragma region Random_number_distributions
 
-	#pragma region uniform_int_distribution
-	// is a C++ standard library class template that provides a way to generate uniformly distributed random integers within a given range. It is defined in the <random> header and is part of the C++11 standard.
-		std::uniform_int_distribution<int> dist(0, 99);
+	#pragma region UniformDistributions
+
+		#pragma region uniform_int_distribution
+
+		// is a C++ standard library class template that provides a way to generate uniformly distributed random integers within a given range. It is defined in the <random> header and is part of the C++11 standard.
+			std::uniform_int_distribution<int> dist(0, 99);
+
+		#pragma endregion
+		#pragma region uniform_real_distribution
+
+			std::random_device rd; 
+			std::mt19937 gen1(rd()); 
+			std::uniform_real_distribution<double> distReal(0, 1); 
+
+			double randomReal = distReal(gen1);
+
+			std::cout << "A random real number: " << randomReal << std::endl << std::endl;
+
+
+		#pragma endregion
 
 	#pragma endregion
+
 #pragma endregion
 
 
