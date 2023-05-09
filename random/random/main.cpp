@@ -31,6 +31,13 @@ int main() {
 		#pragma endregion
 
 	#pragma endregion
+	#pragma region Bernoulli_distributions
+			
+			std::bernoulli_distribution dist1(0.3);	
+			std::mt19937 rng(std::random_device{}());
+			std::cout << "Did the event happen? " << std::boolalpha << dist1(rng) << std::endl;
+
+	#pragma endregion
 
 #pragma endregion
 
