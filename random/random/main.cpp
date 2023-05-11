@@ -45,10 +45,18 @@ int main() {
 
 				std::binomial_distribution<int> dist2(10, 0.3);
 				std::mt19937 rng2(std::random_device{}());
-				std::cout << "(binomial_distribution)Did the event happen? " << std::boolalpha << dist1(rng2) << std::endl;
-
+				std::cout << "(binomial_distribution) -> " << std::boolalpha << dist2(rng2) << std::endl;
 
 		#pragma endregion
+
+		#pragma region negative_binomial_distribution
+
+				std::negative_binomial_distribution<int> dist3(10, 0.3);
+				std::mt19937 rng3(std::random_device{}());
+				std::cout << "(negative_binomial_distribution) -> " << std::boolalpha << dist3(rng3) << std::endl;
+				
+
+		#pragma endregion		
 		
 	#pragma endregion
 
