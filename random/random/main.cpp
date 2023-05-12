@@ -45,7 +45,7 @@ int main() {
 
 				std::binomial_distribution<int> dist2(10, 0.3);
 				std::mt19937 rng2(std::random_device{}());
-				std::cout << "(binomial_distribution) -> " << std::boolalpha << dist2(rng2) << std::endl;
+				std::cout << "(binomial_distribution) -> " << dist2(rng2) << std::endl;
 
 		#pragma endregion
 
@@ -53,10 +53,18 @@ int main() {
 
 				std::negative_binomial_distribution<int> dist3(10, 0.3);
 				std::mt19937 rng3(std::random_device{}());
-				std::cout << "(negative_binomial_distribution) -> " << std::boolalpha << dist3(rng3) << std::endl;
+				std::cout << "(negative_binomial_distribution) -> " << dist3(rng3) << std::endl;
 				
 
-		#pragma endregion		
+		#pragma endregion	
+
+		#pragma region geometric_distribution
+
+				std::mt19937 rng4(std::random_device{}());
+				std::geometric_distribution<int> dist4(0.1);
+				std::cout << "(geometric_distribution) -> " << dist4(rng4) << std::endl;
+
+		#pragma endregion
 		
 	#pragma endregion
 
