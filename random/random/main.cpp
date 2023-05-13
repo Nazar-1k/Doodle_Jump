@@ -68,6 +68,13 @@ int main() {
 		
 	#pragma endregion
 
+	#pragma region Poisson_distributions
+
+		std::poisson_distribution<int> dist5(3.0);
+		std::mt19937 rng5(std::random_device{}());
+		std::cout << "(Poisson_distributions) -> " << dist5(rng5) << std::endl;
+
+	#pragma endregion
 #pragma endregion
 
 
