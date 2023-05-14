@@ -70,9 +70,21 @@ int main() {
 
 	#pragma region Poisson_distributions
 
-		std::poisson_distribution<int> dist5(3.0);
-		std::mt19937 rng5(std::random_device{}());
-		std::cout << "(Poisson_distributions) -> " << dist5(rng5) << std::endl;
+		#pragma region poisson_distribution
+			std::poisson_distribution<int> dist5(3.0);
+			std::mt19937 rng5(std::random_device{}());
+			std::cout << "(Poisson_distributions) -> " << dist5(rng5) << std::endl;
+		#pragma region
+
+		#pragma region exponential_distribution
+
+			std::exponential_distribution<double> dist6(3.0);
+			std::mt19937 rng6(std::random_device{}());
+			std::cout << "(exponential_distribution) -> " << dist6(rng6) << std::endl;
+
+		#pragma region
+
+
 
 	#pragma endregion
 #pragma endregion
