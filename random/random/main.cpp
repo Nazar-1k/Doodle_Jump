@@ -86,13 +86,19 @@ int main() {
 
 		#pragma region gamma_distribution
 
-			std::gamma_distribution<double> dist7(3.0);
+			std::gamma_distribution<double> dist7(100.0);
 			std::mt19937 rng7(std::random_device{}());
 			std::cout << "(gamma_distribution) -> " << dist7(rng7) << std::endl;
 
 		#pragma endregion
 
+		#pragma region weibull_distribution
 
+			std::weibull_distribution<double> dist8(100.0);
+			std::mt19937 rng8(std::random_device{}());
+			std::cout << "(weibull_distribution) -> " << dist8(rng8) << std::endl;
+
+		#pragma endregion
 
 	#pragma endregion
 #pragma endregion
