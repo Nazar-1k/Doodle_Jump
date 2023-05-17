@@ -100,6 +100,15 @@ int main() {
 
 		#pragma endregion
 
+
+		#pragma region extreme_value_distribution
+
+			std::extreme_value_distribution<double> dist9(100.0);
+			std::mt19937 rng9(std::random_device{}());
+			std::cout << "(extreme_value_distribution) -> " << dist9(rng9) << std::endl;
+
+		#pragma endregion
+
 	#pragma endregion
 #pragma endregion
 
