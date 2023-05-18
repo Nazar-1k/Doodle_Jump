@@ -110,6 +110,10 @@ int main() {
 		#pragma endregion
 
 	#pragma endregion
+
+	#pragma region Normal_distributions
+	#pragma endregion
+
 #pragma endregion
 
 
