@@ -112,6 +112,17 @@ int main() {
 	#pragma endregion
 
 	#pragma region Normal_distributions
+
+		#pragma region normal_distribution
+			std::mt19937 gen10(std::random_device{}());
+			// We define the parameters of the normal distribution
+			double mean = 0.0;  // Average value
+			double stddev = 1.0;  // Standard deviation
+			std::normal_distribution<double> dist10(mean, stddev);
+			std::cout << "A random number with a normal distribution: " << dist10(gen10) << std::endl;
+
+		#pragma endregion
+
 	#pragma endregion
 
 #pragma endregion
