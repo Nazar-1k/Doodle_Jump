@@ -115,7 +115,7 @@ int main() {
 
 		// We define the parameters of the normal distribution
 		double mean = 0.0;  // Average value
-		double stddev = 1.0;  // Standard deviation
+		double stddev = 100;  // Standard deviation
 
 		#pragma region normal_distribution
 
@@ -128,13 +128,19 @@ int main() {
 		#pragma region lognormal_distribution
 
 			std::mt19937 gen11(std::random_device{}());
-			// We define the parameters of the normal distribution
 			std::lognormal_distribution<float> dist11(mean, stddev);
 			std::cout << "A random number with a lognormal distribution: " << dist11(gen11) << std::endl;
 
 		#pragma endregion
 
-			
+		#pragma region chi_squared_distribution
+
+			std::mt19937 gen12(std::random_device{}());
+			// We define the parameters of the normal distribution
+			std::chi_squared_distribution<float> dist12(stddev);
+			std::cout << "A random number with a chi_squared_distribution: " << dist11(gen12) << std::endl;
+
+		#pragma endregion
 
 
 	#pragma endregion
