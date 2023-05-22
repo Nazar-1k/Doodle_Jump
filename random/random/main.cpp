@@ -138,9 +138,22 @@ int main() {
 			std::mt19937 gen12(std::random_device{}());
 			// We define the parameters of the normal distribution
 			std::chi_squared_distribution<float> dist12(stddev);
-			std::cout << "A random number with a chi_squared_distribution: " << dist11(gen12) << std::endl;
+			std::cout << "A random number with a chi_squared_distribution: " << dist12(gen12) << std::endl;
 
 		#pragma endregion
+
+
+		#pragma region cauchy_distribution
+
+			std::mt19937 gen13(std::random_device{}());
+			// We define the parameters of the normal distribution
+			std::cauchy_distribution<float> dist13(stddev);
+			std::cout << "A random number with a cauchy_distribution: " << dist13(gen13) << std::endl;
+
+		#pragma endregion
+			
+
+
 
 
 	#pragma endregion
