@@ -153,7 +153,15 @@ int main() {
 		#pragma endregion
 			
 
+		#pragma region fisher_f_distribution
 
+			std::mt19937 gen14(std::random_device{}());
+			// We define the parameters of the normal distribution
+			std::fisher_f_distribution<float> dist14(stddev);
+			std::cout << "A random number with a fisher_f_distribution: " << dist14(gen14) << std::endl;
+
+		#pragma endregion
+			
 
 
 	#pragma endregion
