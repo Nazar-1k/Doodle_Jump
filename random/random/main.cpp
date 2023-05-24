@@ -163,6 +163,16 @@ int main() {
 		#pragma endregion
 			
 
+		#pragma region fisher_f_distribution
+
+			std::mt19937 gen15(std::random_device{}());
+			// We define the parameters of the normal distribution
+			std::student_t_distribution<float> dist15(stddev);
+			std::cout << "A random number with a student_t_distribution: " << dist15(gen15) << std::endl;
+
+		#pragma endregion
+			
+
 
 	#pragma endregion
 
