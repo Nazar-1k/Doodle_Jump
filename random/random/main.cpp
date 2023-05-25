@@ -163,11 +163,11 @@ int main() {
 		#pragma endregion
 			
 
-		#pragma region fisher_f_distribution
+		#pragma region student_t_distribution
 
 			std::mt19937 gen15(std::random_device{}());
 			// We define the parameters of the normal distribution
-			std::student_t_distribution<float> dist15(stddev);
+			std::student_t_distribution<double> dist15(stddev);
 			std::cout << "A random number with a student_t_distribution: " << dist15(gen15) << std::endl;
 
 		#pragma endregion
@@ -175,6 +175,22 @@ int main() {
 
 
 	#pragma endregion
+
+#pragma region Sampling distributions
+
+		#pragma region discrete_distribution
+
+			std::vector<double> probabilities = { 0.1, 0.3, 0.6 }; // ймовірності елементів
+			std::mt19937 gen16(std::random_device{}());
+			std::discrete_distribution<> d16(probabilities.begin(), probabilities.end());
+
+			std::cout << "Generate a random number: " << d16(gen16) << std::endl;
+			
+
+
+		#pragma endregion
+
+#pragma endregion
 
 #pragma endregion
 
