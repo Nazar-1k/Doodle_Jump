@@ -184,11 +184,23 @@ int main() {
 			std::mt19937 gen16(std::random_device{}());
 			std::discrete_distribution<> d16(probabilities.begin(), probabilities.end());
 
-			std::cout << "Generate a random number: " << d16(gen16) << std::endl;
+			std::cout << "Generate a random number discrete_distribution: " << d16(gen16) << std::endl;
 			
+		#pragma endregion
 
+		#pragma region piecewise_constant_distribution
+
+			std::vector<double> intervals = { 0.0, 1.0, 2.0, 3.0 };
+			std::vector<double> weights = { 1.0, 2.0, 3.0 };
+
+			std::mt19937 gen17(std::random_device{}());
+
+			std::piecewise_constant_distribution<double> dist17(intervals.begin(), intervals.end(), weights.begin());
+
+			std::cout << "Generate a random number piecewise_constant_distribution: " << dist17(gen17) << std::endl;
 
 		#pragma endregion
+
 
 #pragma endregion
 
