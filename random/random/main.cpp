@@ -202,6 +202,25 @@ int main() {
 		#pragma endregion
 
 
+#pragma region piecewise_linear_distribution
+
+			std::vector<double> intervals2 = { 0.0, 1.0, 2.0, 3.0 };
+			std::vector<double> weights2 = { 0.1, 0.4, 0.3, 0.2 };
+
+			// Створюємо генератор випадкових чисел
+			std::mt19937 gen18(std::random_device{}());
+
+			// Створюємо розподіл
+			std::piecewise_linear_distribution<double> dist18(intervals2.begin(), intervals2.end(), weights2.begin());
+
+			std::cout << "Generate a random number piecewise_linear_distribution: " << dist18(gen18) << std::endl;
+
+#pragma endregion
+
+			
+
+
+
 #pragma endregion
 
 #pragma endregion
