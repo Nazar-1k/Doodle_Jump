@@ -224,7 +224,7 @@ int main() {
 
 #pragma region Utilities
 
-	#pragma region generate_canonical
+		#pragma region generate_canonical
 
 			std::mt19937 gen19(std::random_device{}());
 
@@ -232,7 +232,22 @@ int main() {
 			double random_number19 = std::generate_canonical<double, 10>(gen19);
 			std::cout << "generate_canonical: " << random_number19 << std::endl;
 
-	#pragma endregion
+		#pragma endregion
+
+		#pragma region seed_seq
+
+			std::seed_seq seed{ 1, 2, 3, 4, 5 };
+
+			std::mt19937 generator(seed);
+
+			std::uniform_int_distribution<int> distribution(1, 100);
+			int randomNumber = distribution(generator);
+
+			std::cout << "seed_seq: " << randomNumber << std::endl;
+
+		#pragma endregion
+
+
 
 #pragma endregion
 
