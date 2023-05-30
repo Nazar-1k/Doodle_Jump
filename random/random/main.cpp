@@ -247,10 +247,7 @@ int main() {
 
 		#pragma endregion
 
-
-
 #pragma endregion
-
 
 #pragma region 	Random_number_engines
 
@@ -282,6 +279,7 @@ int main() {
 	#pragma endregion
 	
 #pragma endregion
+
 #pragma region Random_number_engine_adaptors
 		
 	#pragma region discard_engine
@@ -315,6 +313,7 @@ int main() {
 	#pragma endregion	
 
 #pragma endregion
+
 #pragma region Predefined_random_number_generators
 
 	#pragma region minstd_rand0
@@ -383,6 +382,7 @@ int main() {
 	#pragma endregion 
 
 #pragma endregion
+
 #pragma region Non-deterministic_random_numbers
 
 	#pragma region random_device
@@ -391,7 +391,27 @@ int main() {
 
 #pragma endregion
 
+#pragma CRandomLibrary
 
+#pragma region rand
+
+
+
+#pragma endregion
+
+#pragma region srand
+
+
+
+#pragma endregion
+
+#pragma region RANDMAX
+
+
+
+#pragma endregion
+
+#pragma endregion
 	return 0;
 }
 
