@@ -395,7 +395,12 @@ int main() {
 
 #pragma region rand
 
+	/*	std::srand(static_cast<unsigned int>(std::time(nullptr)));*/
 
+	
+		int randomN = std::rand() % 100 + 1;
+
+		std::cout << "Random: " << randomN << std::endl;
 
 #pragma endregion
 
