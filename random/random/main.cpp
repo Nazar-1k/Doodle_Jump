@@ -414,7 +414,7 @@ int main() {
 
 #pragma region RANDMAX
 
-
+		std::cout << "RAND_MAX: " << RAND_MAX << std::endl;
 
 #pragma endregion
 
